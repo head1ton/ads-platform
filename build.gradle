@@ -50,6 +50,9 @@ dependencies {
 //    testImplementation 'org.springframework.kafka:spring-kafka-test'
     testImplementation 'org.springframework.security:spring-security-test'
 
+    // Auditing
+    implementation group: 'org.hibernate.orm', name: 'hibernate-envers', version: '6.2.7.Final'
+
     // swagger
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.2.0'
     // asciidoctorExt
