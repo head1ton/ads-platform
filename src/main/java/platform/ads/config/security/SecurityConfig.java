@@ -35,7 +35,8 @@ public class SecurityConfig {
                     .requestMatchers(
                         antMatcher("/swagger-ui/**"),       // swagger-ui
                         antMatcher("/swagger-resources/*"),     // swagger-resources
-                        antMatcher("/v3/api-docs/**")
+                        antMatcher("/v3/api-docs/**"),
+                        antMatcher("/docs/**")
                     ).permitAll()
                     .requestMatchers(
                         antMatcher("/api/*/hello")   // hello test
