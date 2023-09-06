@@ -18,7 +18,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private static final String WHITE_LIST = "/api/v1/member/*auth*";
+    private static final String WHITE_LIST_LEVEL1 = "/api/ads/member/*auth*";
+    private static final String WHITE_LIST_LEVEL2 = "/api/ecommerce/**";
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -37,9 +38,10 @@ public class SecurityConfig {
                         antMatcher("/v3/api-docs/**")
                     ).permitAll()
                     .requestMatchers(
-                        antMatcher("/api/*/hello/**")   // hello test
+                        antMatcher("/api/*/hello")   // hello test
                     ).permitAll()
-                    .requestMatchers(antMatcher(WHITE_LIST)).permitAll()
+                    .requestMatchers(antMatcher(WHITE_LIST_LEVEL1)).permitAll()
+                    .requestMatchers(antMatcher(WHITE_LIST_LEVEL2)).permitAll()
                     .anyRequest().authenticated()
             );
         return http.build();

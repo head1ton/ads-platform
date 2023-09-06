@@ -14,7 +14,7 @@ import platform.ads.config.base.ResultVo;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v2")
+@RequestMapping("${api-prefix-lv2}")
 public class HelloV2Controller {
 
     private final HelloV2Service helloV2Service;
@@ -23,8 +23,8 @@ public class HelloV2Controller {
     public ResponseEntity<Api<ResultVo>> hello() {
         return ResponseEntity.ok(
             Api.<ResultVo>builder()
-               .code(ResultCode.SUCCESS.CODE)
-               .message(ResultCode.SUCCESS.MESSAGE)
+               .code(ResultCode.SUCCESS.code)
+               .message(ResultCode.SUCCESS.message)
                .data(helloV2Service.hello())
                .build()
         );

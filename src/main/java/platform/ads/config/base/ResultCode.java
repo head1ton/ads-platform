@@ -6,10 +6,10 @@ public enum ResultCode {
     FAIL("0400", "failure"),
     ;
 
-    public final String CODE;
-    public final String MESSAGE;
+    public final String code;
+    public final String message;
     ResultCode(String CODE, String MESSAGE) {
-        this.CODE = CODE;
-        this.MESSAGE = MESSAGE;
+        this.code = CODE;
+        this.message = MESSAGE;
     }
 }

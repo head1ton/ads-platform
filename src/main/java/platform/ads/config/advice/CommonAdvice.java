@@ -5,6 +5,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
@@ -23,6 +24,8 @@ import platform.ads.config.base.ErrorDto;
 public class CommonAdvice {
 
     private final static String ERRORS = "errors";
+
+    @Value("${docs}")
     private String docs;
 
     // IllegalArgumentException
