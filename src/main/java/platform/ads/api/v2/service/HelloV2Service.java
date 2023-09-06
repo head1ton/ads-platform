@@ -1,10 +1,10 @@
-package platform.ads.service;
+package platform.ads.api.v2.service;
 
 import org.springframework.stereotype.Service;
 import platform.ads.config.base.ResultVo;
 
 @Service
-public class HelloService {
+public class HelloV2Service {
 
     public ResultVo hello() {
         return ResultVo.builder().message("테스트").build();

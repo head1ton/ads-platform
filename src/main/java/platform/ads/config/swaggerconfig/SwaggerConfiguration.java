@@ -23,7 +23,15 @@ public class SwaggerConfiguration {
     public GroupedOpenApi getApiV1() {
         return GroupedOpenApi.builder()
                              .group("API V1")
-                             .pathsToMatch("/api/**")
+                             .pathsToMatch("/api/v1/**")
+                             .build();
+    }
+
+    @Bean
+    public GroupedOpenApi getApiV2() {
+        return GroupedOpenApi.builder()
+                             .group("API V2")
+                             .pathsToMatch("/api/v2**")
                              .build();
     }
 
