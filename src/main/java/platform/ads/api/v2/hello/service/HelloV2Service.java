@@ -1,4 +1,4 @@
-package platform.ads.api.v2.service;
+package platform.ads.api.v2.hello.service;
 
 import org.springframework.stereotype.Service;
 import platform.ads.config.base.ResultVo;
