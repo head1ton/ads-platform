@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private static final String WHITE_LIST_LEVEL1 = "/api/ads/member/*auth*";
+    private static final String WHITE_LIST_LEVEL1 = "/api/ads/auth/*";
     private static final String WHITE_LIST_LEVEL2 = "/api/ecommerce/**";
 
     @Bean
