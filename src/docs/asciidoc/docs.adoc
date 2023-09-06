@@ -1,0 +1,13 @@
+ifndef::snippets[]
+:snippets: ./build/generated-snippets
+endif::[]
+:toc: left
+:toclevels: 2
+:toc-title: ADS API
+:doctype: PLATFORM
+:source-highlighter: highlightjs
+:sectlinks:
+
+= ADS Document API
+
+include::member/member.adoc[]

@@ -23,6 +23,12 @@ spring:
       username: sa
       password:
 
+jwt:
+  secret: Admin001DevTech1234567890abcdefghijklmnopqrstuvxyz009Admin001DevTech1234567890abcdefghijklmnopqrstuvxyz009C8NOMA
+api-prefix-lv1: /api/ads
+api-prefix-lv2: /api/ecommerce
+docs: /docs.html
+
 logging:
   level:
     org:
