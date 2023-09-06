@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  watermelon:
+    container_name: adsplatform
+    build: .
+    ports:
+      - 8000:8000
+    environment:
+      - server.profile=prod
+      - TZ=Asia/Seoul
+      - db.url=jdbc:mysql://master/adsplatform
+      - db.username=watermelon
+      - db.password=password
+
+networks:
+  default:
+    external:
+      name: onepiece
