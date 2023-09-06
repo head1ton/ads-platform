@@ -1,0 +1,3 @@
+${AnsiColor.Blue}
+${AnsiColor.Blue} 😊Spring ver.${spring-boot.version}
+${AnsiBackgroundDEFAULT}${AnsiColor.DEFAULT}
