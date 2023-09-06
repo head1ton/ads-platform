@@ -1,4 +1,4 @@
-package platform.ads.api.v1;
+package platform.ads.api;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

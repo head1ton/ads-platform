@@ -1,4 +1,4 @@
-package platform.ads.api.v1;
+package platform.ads.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;

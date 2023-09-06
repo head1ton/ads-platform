@@ -3,7 +3,7 @@ package platform.ads.config.base;
 public enum ResultCode {
     SUCCESS("0200", "success"),
     POST("0201", "201 success"),
-    FAIL("0400", "failure"),
+    FAIL("0400", "fail"),
     ;
 
     public final String code;

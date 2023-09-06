@@ -1,4 +1,4 @@
-package platform.ads.api.v1;
+package platform.ads.api;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
