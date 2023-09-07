@@ -39,6 +39,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.testcontainers', name: 'testcontainers', version: '1.18.3'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 //    implementation 'org.springframework.kafka:spring-kafka'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -53,12 +55,18 @@ dependencies {
     // Auditing
     implementation group: 'org.hibernate.orm', name: 'hibernate-envers', version: '6.2.7.Final'
 
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.13.0'
+
     // swagger
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.2.0'
     // asciidoctorExt
     asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
     // sonarqube
     implementation 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
+
+    compileOnly group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
 
     // 테스트를 위한 lombok
     testCompileOnly 'org.projectlombok:lombok'
@@ -69,6 +77,12 @@ dependencies {
     testImplementation 'org.testcontainers:mysql'
     testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation 'io.rest-assured:rest-assured'
+
+    testImplementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.11.0'
+
+    testImplementation group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+    testImplementation group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
 
     // querydsl
     implementation 'com.querydsl:querydsl-core:5.0.0'

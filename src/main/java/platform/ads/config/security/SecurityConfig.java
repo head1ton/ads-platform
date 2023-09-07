@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -17,6 +18,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 @EnableWebSecurity
 public class SecurityConfig {
+
+    private final TokenProvider tokenProvider;
+    private final CustomEntryPoint entryPoint;
+    private final CustomAccessDeniedHandler accessDeniedHandler;
 
     private static final String WHITE_LIST_LEVEL1 = "/api/ads/auth/*";
     private static final String WHITE_LIST_LEVEL2 = "/api/ecommerce/**";
@@ -44,7 +49,11 @@ public class SecurityConfig {
                     .requestMatchers(antMatcher(WHITE_LIST_LEVEL1)).permitAll()
                     .requestMatchers(antMatcher(WHITE_LIST_LEVEL2)).permitAll()
                     .anyRequest().authenticated()
-            );
+            )
+            .exceptionHandling(c -> c.authenticationEntryPoint(entryPoint)
+                                     .accessDeniedHandler(accessDeniedHandler))
+            .sessionManagement(c -> c.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .apply(new JwtSecurityConfig(tokenProvider));
         return http.build();
     }
 
